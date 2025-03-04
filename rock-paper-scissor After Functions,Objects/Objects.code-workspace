@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../Objects"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "rock-paper-scissor After Functions,Objects",
+		"liveServer.settings.port": 5501
+	}
+}

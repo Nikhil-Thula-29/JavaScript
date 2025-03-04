@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(DATA OBJECT MODEL)</title>
+</head>
+<body>
+    Nikhil Thula
+    <br> 
+    <button>Any Help!</button>   
+    <button class="js-button">Second Button</button>
+    <Script>
+        /*
+        document.body.innerHTML='Nikhil Thula';
+        document.title='DATA OBJECT MODEL(DOM)'
+        */
+
+
+        //Use document.body to change the styles for the existing body
+        //Use document.body.innerHTML when we need to change the body 
+        /*
+        console.log(document.body);
+        console.log(typeof document.body);
+        console.log(document.body.innerHTML);
+        document.body.innerHTML='<button>Click Me!</button>';
+        */
+
+        //Use document.querySelector for selecting any tags or any specific item by it's class or tag by adding .innerHTML at the end
+         console.log(document.querySelector('button').innerHTML);
+         //document.querySelector('button').innerHTML='Changed!';
+         
+         //for class type use .
+         const buttonElemnt=document.querySelector('.js-button').innerHTML;
+         console.log(buttonElemnt);
+    </Script>
+</body>
+</html>

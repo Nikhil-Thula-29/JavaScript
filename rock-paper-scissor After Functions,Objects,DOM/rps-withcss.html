@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .title{
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif   ;
+        }
+        .move-icon{
+            height:80px;
+            cursor: pointer;
+            width:150px;
+            height: 150px;
+            border-radius:100px;
+        }
+        .move-but{
+            background-color: transparent;
+            border-radius:100px;
+        }
+        .result{
+            font-size:25px;
+            font-weight: bold;
+            margin-top:50px;
+        }
+        .move-i{
+            height: 60px;
+            border-radius: 100px;
+        }
+        .reset{
+            background-color: white;
+            border:none;
+            font-size: 15px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .score{
+            font-size:25px;
+            font-weight: bold; 
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <p class="title">ROCK-PAPER-SCISSOR(After Functions,Objects,DOM)</p>
+    <br>
+    <br>
+    <button class="move-but" onclick="
+    playGame('rock'); 
+    "><img src="images/rock.jpeg" class="move-icon"></button>
+    <button class="move-but" onclick="
+    playGame('paper');
+    "><img src="images/paper.jpeg" class="move-icon"></button>
+    <button class="move-but" onclick="
+    playGame('scissor');
+    "><img src="images/scissor.jpeg" class="move-icon"></button>
+
+
+    <p class="js-result result"></p>
+    <p class="js-moves "></p>
+    <p class="js-score score"></p>
+
+
+    <button class="reset"onclick="
+    score.wins=0, 
+    score.loose=0,
+    score.tie=0
+    localStorage.removeItem('score');
+    updateScoreElement();
+    ">Reset Score</button>
+
+    <script> 
+    const score=JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+    updateScoreElement();
+    function playGame(usermove){   
+    let result='';   
+    const computermove=pickComputerMove();
+    if(usermove==='paper'){
+        if(computermove==='rock'){
+        result='You Win';
+        }else if(computermove==='scissor'){
+        result='You Loose';
+        }else{
+        result='Tie';
+        }
+    }else if(usermove==='scissor'){
+        if(computermove==='rock'){
+        result='You Loose';
+        }else if(computermove==='scissor'){
+        result='Tie';
+        }else{
+        result='You Win';
+        }
+    }else{
+        if(computermove==='rock'){
+        result='Tie';
+        }else if(computermove==='scissor'){
+        result='You Win';
+        }else{
+        result='You Loose';
+        }
+    }
+
+    if(result==='You Win'){
+        score.wins+=1;
+    }else if(result==='You Loose'){
+        score.loose+=1;
+    }else{ 
+        score.tie+=1;
+    }
+    //localStorage only supports strings then we need to convert score to string i.e json.stringify
+    localStorage.setItem('score',JSON.stringify(score));
+    updateScoreElement();
+    //Note::  It is not '' it is `` on tab button.
+    document.querySelector('.js-result').innerHTML=`${result}`;
+    document.querySelector('.js-moves').innerHTML=`You
+        <img src="images/${usermove}.jpeg" class="move-i">
+        <img src="images/${computermove}.jpeg" class="move-i">
+        Computer`
+    //alert(`You picked ${usermove}. Computer picked ${computermove}. ${result}.\nWins: ${score.wins}, Looses: ${score.loose}, Ties: ${score.tie}.`);
+    }      
+    function pickComputerMove(){
+    let computervalue1=Math.random();
+    let computermove='';
+    if(computervalue1>=0 && computervalue1<1/3){
+        computermove='rock';
+    }else if(computervalue1>=1/3 && computervalue1>2/3){
+        computermove='paper';
+    }else{
+        computermove='scissor';
+    }
+    console.log(computermove);
+    return computermove;
+    }
+    function updateScoreElement(){
+        document.querySelector('.js-score').innerHTML=`Wins: ${score.wins}, Looses: ${score.loose}, Ties: ${score.tie}`;
+    } 
+    </script>
+</body>
+</html>
+

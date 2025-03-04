@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays And Loops</title>
+</head>
+<body>
+    <Script>
+        /*
+        const arr=[15,25,653,4,5,6]
+        console.log(arr[0]);
+        console.log(arr);
+        [1,'hello',true,{name:'nikhil'},[25,68]]
+        console.log(typeof [12,6558]);  //object
+        console.log(Array.isArray([25,636]))
+        console.log(arr.length)
+        arr.push(100);  //adds at the end
+        console.log(arr);
+        arr.splice(0,1);    //removes o indext value only 1 value
+        console.log(arr);
+        */
+
+
+        //loops
+        
+        /*
+        let i=1;
+        while(i<=5){
+            console.log(i);
+            i++;
+        }
+        for(let i=1;i<=5;i++){
+            console.log(i);
+        }
+
+        let randomno=0;
+        while(randomno<0.5){
+            randomno=Math.random();
+        }
+        console.log(randomno);
+        */
+        
+
+        /*
+        const todolist=[
+            'makedinner',
+            'wash dishes',
+            'watch youtube'
+        ]
+
+        for(let i=0;i<todolist.length;i++){
+            console.log(todolist[i]);
+        }
+        */
+
+        // const nums=[1,1,3]
+        // let sum=0;
+        // for(let i=0;i<nums.length;i++){
+        //     sum=sum+nums[i];
+        // }
+        // console.log(sum);
+        
+        /*
+        const nums=[1,1,2]
+        const doubled=[];
+        for(let i=0;i<nums.length;i++){
+            doubled.push(nums[i]*2);
+        }
+        console.log(doubled);
+        */
+
+        const arr1=[1,2,3]
+        //const arr2=arr1;  //if we assign directly with equal then it referes same
+        const arr2=arr1.slice();    //by slice it will be different ref
+        arr2.push(4);   //arrays are references so if we change arr2 then arr1 also changes
+        console.log(arr1);
+        console.log(arr2);
+        const [fvalue,svalue,tvalue]=[22,56,89]
+        console.log(fvalue);
+
+        for(let i=1;i<10;i++){
+            if(i%3===0){
+                continue;
+            }
+            console.log(i);
+            if(i==8){
+                break;
+            }
+        }
+
+        let i=1;
+        while(i<=10){
+            if(i%3===0){
+                i++;
+                continue;
+            }
+            console.log(i);
+            i++;
+        }
+
+        function douarray(nums){
+            const doubled=[];
+            for(let i=0;i<nums.length;i++){
+                const num=nums[i];
+                if(num===0){
+                    return doubled;
+                }
+                doubled.push(num*2);
+            }
+            return doubled;
+        }
+        console.log(douarray([1,1,3]));
+        console.log(douarray([2,2,5,6,13,0,7]));
+
+    </Script>
+</body>
+</html>

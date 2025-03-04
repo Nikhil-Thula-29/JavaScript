@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Functions</title>
+</head>
+<body>
+    <Script>
+
+        /*
+        function greeting(){
+            console.log('hello');
+        }
+        greeting();
+
+        const function1= function greetingsir(){
+            console.log('hello Nikhi Thula');
+        }
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        const obj={
+            name:'nikhil raj',
+            fun: function wish(){
+                console.log('Nikhil Raj');
+            }
+        }
+
+        console.log(obj);
+        obj.fun();
+
+
+        function display(param){
+            console.log(param);
+        }
+        display(2);
+
+
+        //para as function i.e function inside function i.e call back
+        function run(param){
+            param();    //bcz it contains function
+        }
+        run(function(){
+            console.log("Hi you have to run");
+        })
+        */
+        
+        //runs only once
+        // setTimeout(function(){
+        //     console.log('timeout')
+        // },3000);
+
+        // console.log('nextLine');
+        
+
+        //runs every 3 secs
+        // setInterval(function(){
+        //     console.log('interval')
+        // },3000);
+
+        //foreach
+
+        // ['washing','cleaning','jumping','playing'].forEach(function(val){
+        //     if(val==='jumping'){
+        //         return;     //same as continue in for;
+        //     }
+        //     console.log(val);
+        // })
+
+
+        //filter same as forEach value and index it gives true or false as output
+        //if it is true then it will keep it in new array.
+        console.log([1,-3,5].filter((val,index)=>{
+            return val>=0;
+        }));
+
+        //map is used for double or mul etc for arrays.
+        console.log([1,12,13].map((val,index)=>{
+            return val*2;
+        }));
+
+    </Script>
+</body>
+</html>

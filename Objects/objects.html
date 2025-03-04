@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        const prod={
+            name:"nikhil",
+            id: 20
+        }
+        const prod1={
+            name:"laptop",
+            id:15,
+            website:"Flipkart",
+            rating:{
+                stars:4.5,
+                count:80
+            },
+            fun:function insideobject(){
+                console.log('Function inside object');
+            },
+            fun1:function inside(){
+                console.log('Function inside object1');
+            }
+        };
+        prod1.name='Books';
+        prod1.payment="online";
+        console.log(prod);
+        console.log(prod1);
+        console.log(prod1.name);
+        console.log('==========================Same Meaning=======================');
+        console.log(prod1['name']);
+        console.log(prod1.id);
+        console.log(prod1.website);
+        console.log(prod1.payment);
+        console.log(prod1.rating.stars);
+        console.log(prod1.fun());
+        console.log(prod1.fun1());
+        console.log(typeof console);
+        console.log(typeof console.log);
+        console.log(JSON.stringify(prod1));
+        //This is to convert object to json data json data will not have function values...
+       const Jsonstring=JSON.stringify(prod1);
+        console.log(typeof Jsonstring);
+        //This is to convert json to object type
+        console.log(JSON.parse(Jsonstring));
+        console.log('hello'.length);
+        //Here prod2 is the reference of prod1 not the same object we can not the compare values inside the object it gives not equal because they are refernces.
+        const prod2=prod1;
+        console.log(prod2);
+        const addition={
+            add(){          //shortcut only inside objects
+            console.log(5+5);
+           }
+        }
+        addition.add();
+    </script>
+</body>
+</html>

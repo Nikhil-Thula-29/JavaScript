@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PROJECTS</title>
+    <style>
+        
+        .sub-button{    
+            border: none;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-left:15px;
+            padding-right:15px;
+            background-color: black;
+            color:white;
+            border-radius:50px;
+            cursor:pointer;
+            margin-bottom: 50px;
+        }
+        .is-sub{
+            background-color: grey;
+            color:black;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .js-cod{
+            font-size:15px;
+            padding:10px;
+        }
+        .js-cal{
+            background-color: green;
+            color:white;
+            border:none;
+            font-size:15px;
+            padding:12px 15px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    
+    <!--we can add many classes by giving it to space-->
+    <button onclick="subscribe()" class="js-subscribe sub-button">Subscribe</button>
+
+
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of Order" class="cod js-cod" onkeydown="cost();">
+    <button  class="js-cal" onclick="cod();
+    ">Calculate</button>
+
+    <p class="js-cost"></p>
+
+
+    <Script>
+        function subscribe(){
+            const butElement=document.querySelector('.js-subscribe');
+            if(butElement.innerText==='Subscribe'){
+                butElement.innerText='Subscribed';
+                butElement.classList.add('is-sub');
+            }
+            else{
+                butElement.innerText='Subscribe';
+                butElement.classList.remove('is-sub');
+            }
+        }
+        function cod(){
+            const cod=document.querySelector('.cod');
+            let cost=Number(cod.value);
+            if(cost<=40){
+                cost=cost+10;
+            }
+            //console.log(cost);
+            //console.log(typeof cost);
+            document.querySelector('.js-cost').innerHTML=`$${cost}`;
+        }
+        function cost(){
+            let keypressed=event.key
+            //console.log(event);
+            //console.log(keypressed);
+            if(keypressed==='Enter'){
+                   cod();
+            }
+        }
+
+    </Script>
+</body>
+</html>

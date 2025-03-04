@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    CartQuantity
+    <br>
+    <br>
+    <button onclick="console.log(`CartQuantity:: ${cartQuantity}`);">showQuantity</button>
+    <button onclick="cartQuantity=cartQuantity+1;console.log(`CartQuantity:: ${cartQuantity}`)">Add to Cart</button>
+    <button onclick="cartQuantity=cartQuantity+2;console.log(`CartQuantity:: ${cartQuantity}`)">+2</button>
+    <button onclick="cartQuantity=cartQuantity+3;console.log(`CartQuantity:: ${cartQuantity}`)">+3</button>
+    <button onclick="cartQuantity=0;console.log(`cart has been rested.`);console.log(`CartQuantity:: ${cartQuantity}`)">Reset Cart</button>
+    <script>
+        let cartQuantity=0;
+    </script>
+</body>
+</html>
